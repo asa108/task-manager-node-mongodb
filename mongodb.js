@@ -17,44 +17,5 @@ MongoClient.connect(
       return console.log("Unable to connect to database");
     }
     const db = client.db(databaseName);
-
-    // db.collection("users").findOne(
-    //   { _id: new ObjectID("61fd8f7c53592b2f50f2271f") },
-    //   (error, user) => {
-    //     if (error) {
-    //       return console.log("Unable to find");
-    //     }
-
-    //     console.log(user);
-    //   }
-    // );
-
-    // db.collection("users")
-    //   .find({ age: 23 })
-    //   .toArray((error, users) => {
-    //     console.log(users);
-    //   });
-
-    // show how many object match
-    // db.collection("users")
-    //   .find({ age: 23 })
-    //   .count((error, users) => {
-    //     console.log(users);
-    //   });
-
-    db.collection("tasks").findOne(
-      {
-        _id: new ObjectID("61fd919b16e84b2fdb77d2d7"),
-      },
-      (error, task) => {
-        console.log(task);
-      }
-    );
-
-    db.collection("tasks")
-      .find({ completed: false })
-      .toArray((error, tasks) => {
-        console.log(tasks);
-      });
   }
 );
