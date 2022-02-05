@@ -18,18 +18,18 @@ MongoClient.connect(
     }
     const db = client.db(databaseName);
 
-    const updatePromise = db.collection("users").updateOne(
-      {
-        _id: ObjectID("61fd8dc6dea84d2ec57e9c1d"),
-      },
-      {
-        $set: {
-          name: "Alex",
+    const updatePromise = db
+      .collection("users")
+      .updateOne(
+        {
+          _id: ObjectID("61fd8bcaae318c2db773da77"),
         },
-      }
-    );
-
-    updatePromise
+        {
+          $inc: {
+            age: -3,
+          },
+        }
+      )
       .then((result) => {
         console.log(result);
       })
