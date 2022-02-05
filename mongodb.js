@@ -17,5 +17,27 @@ MongoClient.connect(
       return console.log("Unable to connect to database");
     }
     const db = client.db(databaseName);
+
+    // db.collection("users")
+    //   .deleteMany({
+    //     age: 41,
+    //   })
+    //   .then((result) => {
+    //     console.log(result);
+    //   })
+    //   .catch((error) => {
+    //     console.log(error);
+    //   });
+
+    db.collection("tasks")
+      .deleteMany({
+        tesk: "To do 2",
+      })
+      .then((resule) => {
+        console.log("result");
+      })
+      .catch((error) => {
+        console.log("error");
+      });
   }
 );
