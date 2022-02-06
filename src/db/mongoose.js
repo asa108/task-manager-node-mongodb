@@ -9,12 +9,12 @@ mongoose.connect("mongodb://127.0.0.1:27017/task-manager-api", {
 // const User = mongoose.model("User", {
 //   name: {
 //     type: String,
-//     require: true,
+//     required: true,
 //     trim: true,
 //   },
 //   email: {
 //     type: String,
-//     require: true,
+//     required: true,
 //     trim: true,
 //     lowercase: true,
 //     validate(value) {
@@ -25,7 +25,7 @@ mongoose.connect("mongodb://127.0.0.1:27017/task-manager-api", {
 //   },
 //   password: {
 //     type: String,
-//     require: true,
+//     required: true,
 //     minLength: 7,
 //     trim: true,
 //     validate(value) {
@@ -62,7 +62,7 @@ mongoose.connect("mongodb://127.0.0.1:27017/task-manager-api", {
 const Task = mongoose.model("Task", {
   description: {
     type: String,
-    require: true,
+    required: true,
     trim:true
   },
   completed: {
@@ -71,9 +71,7 @@ const Task = mongoose.model("Task", {
   },
 });
 
-const task = new Task({
-    description: 'learn mongoose',
-})
+const task = new Task({});
 
 task.save().then(() => {
     console.log(task)
